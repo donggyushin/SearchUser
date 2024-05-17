@@ -42,7 +42,7 @@ extension GithubAPI: TargetType {
         [
             "Content-Type": "application/json",
             "Accept": "application/vnd.github+json",
-            "Authorization": "Bearer \(AuthRepositoryImpl.shared.accessToken ?? "")"
+            "Authorization": "Bearer \(AuthRepositoryImpl.shared._accessToken ?? "")"
         ]
     }
 }
