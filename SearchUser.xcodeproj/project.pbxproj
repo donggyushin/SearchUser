@@ -14,6 +14,7 @@
 		700D53E72BF7A84C00CA77B3 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		700D53EE2BF7A88C00CA77B3 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */; };
 		700D53F12BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53F02BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift */; };
+		700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */; };
 		70B718472BF792710095B9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718462BF792710095B9AD /* AppDelegate.swift */; };
 		70B718492BF792710095B9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718482BF792710095B9AD /* SceneDelegate.swift */; };
 		70B7184B2BF792710095B9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7184A2BF792710095B9AD /* ViewController.swift */; };
@@ -108,6 +109,7 @@
 		700D53DC2BF7A82D00CA77B3 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		700D53F02BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGithubCodeUsecase.swift; sourceTree = "<group>"; };
+		700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		70B718442BF792710095B9AD /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B718462BF792710095B9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B718482BF792710095B9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +201,30 @@
 			path = Usecase;
 			sourceTree = "<group>";
 		};
+		700D53F22BF7AA5300CA77B3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				700D53F32BF7AA5500CA77B3 /* View */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		700D53F32BF7AA5500CA77B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		700D53F62BF7AA7E00CA77B3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				70B7186B2BF793B10095B9AD /* View */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		70B718202BF791CA0095B9AD = {
 			isa = PBXGroup;
 			children = (
@@ -239,8 +265,9 @@
 		70B7185E2BF793010095B9AD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				70B7186B2BF793B10095B9AD /* View */,
 				70B7185F2BF793010095B9AD /* Presentation.h */,
+				700D53F22BF7AA5300CA77B3 /* Auth */,
+				700D53F62BF7AA7E00CA77B3 /* User */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -543,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */,
 				70B7186A2BF793100095B9AD /* SearchUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

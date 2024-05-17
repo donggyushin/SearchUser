@@ -8,17 +8,22 @@
 import UIKit
 import Presentation
 import DataLayer
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private var requestAccessTokenTask: Task<(), any Error>? = nil
+    private var cancellables = Set<AnyCancellable>()
+    
+    override init() {
+        super.init()
+        bind()
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = .init(windowScene: scene)
-        window?.rootViewController = Presentation.SearchUserViewController()
-        window?.makeKeyAndVisible()
         return
     }
     
@@ -31,6 +36,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 requestAccessTokenTask = nil 
             }
         }
+    }
+    
+    private func bind() {
+        DataLayer.AuthRepositoryImpl.shared
+            .accessToken
+            .receive(on: DispatchQueue.main)
+            .sink { token in
+                if token == nil {
+                    if self.window?.rootViewController is Presentation.AuthViewController == false {
+                        self.window?.rootViewController = Presentation.AuthViewController()
+                    }
+                } else {
+                    if self.window?.rootViewController is Presentation.SearchUserViewController == false {
+                        self.window?.rootViewController = Presentation.SearchUserViewController()
+                    }
+                }
+                
+                self.window?.makeKeyAndVisible()
+            }
+            .store(in: &cancellables)
     }
 }
 
