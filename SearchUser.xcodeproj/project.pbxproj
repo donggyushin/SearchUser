@@ -17,11 +17,15 @@
 		70B718632BF793010095B9AD /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B7185D2BF793010095B9AD /* Presentation.framework */; };
 		70B718642BF793010095B9AD /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70B7185D2BF793010095B9AD /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70B7186A2BF793100095B9AD /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718692BF793100095B9AD /* SearchUserViewController.swift */; };
-		70B718742BF793C50095B9AD /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B718732BF793C50095B9AD /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70B718772BF793C50095B9AD /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B718712BF793C50095B9AD /* Data.framework */; };
-		70B718782BF793C50095B9AD /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70B718712BF793C50095B9AD /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70B7187E2BF794050095B9AD /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 70B7187D2BF794050095B9AD /* Then */; };
-		70B718812BF7943D0095B9AD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 70B718802BF7943D0095B9AD /* Moya */; };
+		70B718932BF7A04E0095B9AD /* DataLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B718922BF7A04E0095B9AD /* DataLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B718962BF7A04E0095B9AD /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B718902BF7A04E0095B9AD /* DataLayer.framework */; };
+		70B718972BF7A04E0095B9AD /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70B718902BF7A04E0095B9AD /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		70B7189E2BF7A0C40095B9AD /* MoyaGithub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718892BF79E880095B9AD /* MoyaGithub.swift */; };
+		70B7189F2BF7A0CA0095B9AD /* MoyaGithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718872BF799CE0095B9AD /* MoyaGithubAPI.swift */; };
+		70B718A32BF7A0EF0095B9AD /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718A22BF7A0EF0095B9AD /* AuthRepositoryImpl.swift */; };
+		70B718A62BF7A2DF0095B9AD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 70B718A52BF7A2DF0095B9AD /* Moya */; };
+		70B718A92BF7A3810095B9AD /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718A82BF7A3810095B9AD /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +36,12 @@
 			remoteGlobalIDString = 70B7185C2BF793010095B9AD;
 			remoteInfo = Presentation;
 		};
-		70B718752BF793C50095B9AD /* PBXContainerItemProxy */ = {
+		70B718942BF7A04E0095B9AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 70B718212BF791CA0095B9AD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 70B718702BF793C50095B9AD;
-			remoteInfo = Data;
+			remoteGlobalIDString = 70B7188F2BF7A04E0095B9AD;
+			remoteInfo = DataLayer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -48,8 +52,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				70B718782BF793C50095B9AD /* Data.framework in Embed Frameworks */,
 				70B718642BF793010095B9AD /* Presentation.framework in Embed Frameworks */,
+				70B718972BF7A04E0095B9AD /* DataLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,8 +72,12 @@
 		70B7185D2BF793010095B9AD /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B7185F2BF793010095B9AD /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
 		70B718692BF793100095B9AD /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
-		70B718712BF793C50095B9AD /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70B718732BF793C50095B9AD /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		70B718872BF799CE0095B9AD /* MoyaGithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaGithubAPI.swift; sourceTree = "<group>"; };
+		70B718892BF79E880095B9AD /* MoyaGithub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaGithub.swift; sourceTree = "<group>"; };
+		70B718902BF7A04E0095B9AD /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B718922BF7A04E0095B9AD /* DataLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
+		70B718A22BF7A0EF0095B9AD /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
+		70B718A82BF7A3810095B9AD /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B718772BF793C50095B9AD /* Data.framework in Frameworks */,
 				70B718632BF793010095B9AD /* Presentation.framework in Frameworks */,
+				70B718962BF7A04E0095B9AD /* DataLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,11 +98,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70B7186E2BF793C50095B9AD /* Frameworks */ = {
+		70B7188D2BF7A04E0095B9AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B718812BF7943D0095B9AD /* Moya in Frameworks */,
+				70B718A62BF7A2DF0095B9AD /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +114,9 @@
 			children = (
 				70B718452BF792710095B9AD /* App */,
 				70B7185E2BF793010095B9AD /* Presentation */,
-				70B718722BF793C50095B9AD /* Data */,
+				70B718912BF7A04E0095B9AD /* DataLayer */,
 				70B7182A2BF791CA0095B9AD /* Products */,
+				70B718A42BF7A2DF0095B9AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,7 +125,7 @@
 			children = (
 				70B718442BF792710095B9AD /* App.app */,
 				70B7185D2BF793010095B9AD /* Presentation.framework */,
-				70B718712BF793C50095B9AD /* Data.framework */,
+				70B718902BF7A04E0095B9AD /* DataLayer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,12 +161,71 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		70B718722BF793C50095B9AD /* Data */ = {
+		70B718862BF799A10095B9AD /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				70B718732BF793C50095B9AD /* Data.h */,
+				70B718872BF799CE0095B9AD /* MoyaGithubAPI.swift */,
 			);
-			path = Data;
+			path = Util;
+			sourceTree = "<group>";
+		};
+		70B718912BF7A04E0095B9AD /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				70B718922BF7A04E0095B9AD /* DataLayer.h */,
+				70B7189B2BF7A08A0095B9AD /* Auth */,
+				70B7189C2BF7A08D0095B9AD /* User */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		70B7189B2BF7A08A0095B9AD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				70B718A72BF7A3780095B9AD /* Model */,
+				70B718A12BF7A0E20095B9AD /* Repository */,
+				70B7189D2BF7A0BA0095B9AD /* Util */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		70B7189C2BF7A08D0095B9AD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				70B718862BF799A10095B9AD /* Util */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		70B7189D2BF7A0BA0095B9AD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				70B718892BF79E880095B9AD /* MoyaGithub.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		70B718A12BF7A0E20095B9AD /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				70B718A22BF7A0EF0095B9AD /* AuthRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		70B718A42BF7A2DF0095B9AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70B718A72BF7A3780095B9AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70B718A82BF7A3810095B9AD /* Token.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +239,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70B7186C2BF793C50095B9AD /* Headers */ = {
+		70B7188B2BF7A04E0095B9AD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B718742BF793C50095B9AD /* Data.h in Headers */,
+				70B718932BF7A04E0095B9AD /* DataLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +263,7 @@
 			);
 			dependencies = (
 				70B718622BF793010095B9AD /* PBXTargetDependency */,
-				70B718762BF793C50095B9AD /* PBXTargetDependency */,
+				70B718952BF7A04E0095B9AD /* PBXTargetDependency */,
 			);
 			name = App;
 			productName = App;
@@ -223,25 +291,25 @@
 			productReference = 70B7185D2BF793010095B9AD /* Presentation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		70B718702BF793C50095B9AD /* Data */ = {
+		70B7188F2BF7A04E0095B9AD /* DataLayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70B718792BF793C50095B9AD /* Build configuration list for PBXNativeTarget "Data" */;
+			buildConfigurationList = 70B718982BF7A04E0095B9AD /* Build configuration list for PBXNativeTarget "DataLayer" */;
 			buildPhases = (
-				70B7186C2BF793C50095B9AD /* Headers */,
-				70B7186D2BF793C50095B9AD /* Sources */,
-				70B7186E2BF793C50095B9AD /* Frameworks */,
-				70B7186F2BF793C50095B9AD /* Resources */,
+				70B7188B2BF7A04E0095B9AD /* Headers */,
+				70B7188C2BF7A04E0095B9AD /* Sources */,
+				70B7188D2BF7A04E0095B9AD /* Frameworks */,
+				70B7188E2BF7A04E0095B9AD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Data;
+			name = DataLayer;
 			packageProductDependencies = (
-				70B718802BF7943D0095B9AD /* Moya */,
+				70B718A52BF7A2DF0095B9AD /* Moya */,
 			);
-			productName = Data;
-			productReference = 70B718712BF793C50095B9AD /* Data.framework */;
+			productName = DataLayer;
+			productReference = 70B718902BF7A04E0095B9AD /* DataLayer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -261,7 +329,7 @@
 						CreatedOnToolsVersion = 15.3;
 						LastSwiftMigration = 1530;
 					};
-					70B718702BF793C50095B9AD = {
+					70B7188F2BF7A04E0095B9AD = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -285,7 +353,7 @@
 			targets = (
 				70B718432BF792710095B9AD /* App */,
 				70B7185C2BF793010095B9AD /* Presentation */,
-				70B718702BF793C50095B9AD /* Data */,
+				70B7188F2BF7A04E0095B9AD /* DataLayer */,
 			);
 		};
 /* End PBXProject section */
@@ -308,7 +376,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70B7186F2BF793C50095B9AD /* Resources */ = {
+		70B7188E2BF7A04E0095B9AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,10 +404,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70B7186D2BF793C50095B9AD /* Sources */ = {
+		70B7188C2BF7A04E0095B9AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B718A32BF7A0EF0095B9AD /* AuthRepositoryImpl.swift in Sources */,
+				70B7189E2BF7A0C40095B9AD /* MoyaGithub.swift in Sources */,
+				70B7189F2BF7A0CA0095B9AD /* MoyaGithubAPI.swift in Sources */,
+				70B718A92BF7A3810095B9AD /* Token.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,10 +423,10 @@
 			target = 70B7185C2BF793010095B9AD /* Presentation */;
 			targetProxy = 70B718612BF793010095B9AD /* PBXContainerItemProxy */;
 		};
-		70B718762BF793C50095B9AD /* PBXTargetDependency */ = {
+		70B718952BF7A04E0095B9AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 70B718702BF793C50095B9AD /* Data */;
-			targetProxy = 70B718752BF793C50095B9AD /* PBXContainerItemProxy */;
+			target = 70B7188F2BF7A04E0095B9AD /* DataLayer */;
+			targetProxy = 70B718942BF7A04E0095B9AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -383,6 +455,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -446,6 +519,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -503,6 +577,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YV58Q28W8Z;
@@ -532,6 +607,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YV58Q28W8Z;
@@ -558,7 +634,7 @@
 		70B718662BF793010095B9AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -595,7 +671,7 @@
 		70B718672BF793010095B9AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -628,10 +704,10 @@
 			};
 			name = Release;
 		};
-		70B7187A2BF793C50095B9AD /* Debug */ = {
+		70B718992BF7A04E0095B9AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -651,7 +727,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.DataLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -663,10 +739,10 @@
 			};
 			name = Debug;
 		};
-		70B7187B2BF793C50095B9AD /* Release */ = {
+		70B7189A2BF7A04E0095B9AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -686,7 +762,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.DataLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -728,11 +804,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70B718792BF793C50095B9AD /* Build configuration list for PBXNativeTarget "Data" */ = {
+		70B718982BF7A04E0095B9AD /* Build configuration list for PBXNativeTarget "DataLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70B7187A2BF793C50095B9AD /* Debug */,
-				70B7187B2BF793C50095B9AD /* Release */,
+				70B718992BF7A04E0095B9AD /* Debug */,
+				70B7189A2BF7A04E0095B9AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -764,7 +840,7 @@
 			package = 70B7187C2BF794040095B9AD /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
-		70B718802BF7943D0095B9AD /* Moya */ = {
+		70B718A52BF7A2DF0095B9AD /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70B7187F2BF7943D0095B9AD /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
