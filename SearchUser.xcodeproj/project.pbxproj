@@ -225,13 +225,13 @@
 		70B718452BF792710095B9AD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				70B718542BF792720095B9AD /* Info.plist */,
 				70B718462BF792710095B9AD /* AppDelegate.swift */,
 				70B718482BF792710095B9AD /* SceneDelegate.swift */,
 				70B7184A2BF792710095B9AD /* ViewController.swift */,
-				70B7184C2BF792710095B9AD /* Main.storyboard */,
 				70B7184F2BF792720095B9AD /* Assets.xcassets */,
 				70B718512BF792720095B9AD /* LaunchScreen.storyboard */,
-				70B718542BF792720095B9AD /* Info.plist */,
+				70B7184C2BF792710095B9AD /* Main.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
