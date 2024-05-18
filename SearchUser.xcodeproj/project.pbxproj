@@ -33,6 +33,8 @@
 		700FF7552BF877700014890A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF7542BF877700014890A /* Users.swift */; };
 		700FF7582BF878920014890A /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF7572BF878920014890A /* UserRepositoryImpl.swift */; };
 		700FF75B2BF8790F0014890A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF75A2BF8790F0014890A /* User.swift */; };
+		700FF75D2BF879B00014890A /* SearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF75C2BF879B00014890A /* SearchUserViewModel.swift */; };
+		700FF75F2BF87A310014890A /* SearchUsersMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF75E2BF87A310014890A /* SearchUsersMetadata.swift */; };
 		70B718472BF792710095B9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718462BF792710095B9AD /* AppDelegate.swift */; };
 		70B718492BF792710095B9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718482BF792710095B9AD /* SceneDelegate.swift */; };
 		70B7184B2BF792710095B9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7184A2BF792710095B9AD /* ViewController.swift */; };
@@ -167,6 +169,8 @@
 		700FF7542BF877700014890A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		700FF7572BF878920014890A /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		700FF75A2BF8790F0014890A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		700FF75C2BF879B00014890A /* SearchUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewModel.swift; sourceTree = "<group>"; };
+		700FF75E2BF87A310014890A /* SearchUsersMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersMetadata.swift; sourceTree = "<group>"; };
 		70B718442BF792710095B9AD /* Search App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B718462BF792710095B9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B718482BF792710095B9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 		700FF7592BF879040014890A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				700FF75E2BF87A310014890A /* SearchUsersMetadata.swift */,
 				700FF75A2BF8790F0014890A /* User.swift */,
 			);
 			path = Model;
@@ -409,11 +414,11 @@
 			isa = PBXGroup;
 			children = (
 				70B718452BF792710095B9AD /* App */,
-				70B7185E2BF793010095B9AD /* Presentation */,
 				70B718912BF7A04E0095B9AD /* DataLayer */,
 				700D53DB2BF7A82D00CA77B3 /* Domain */,
-				70B7182A2BF791CA0095B9AD /* Products */,
 				70B718A42BF7A2DF0095B9AD /* Frameworks */,
+				70B7185E2BF793010095B9AD /* Presentation */,
+				70B7182A2BF791CA0095B9AD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -458,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				70B718692BF793100095B9AD /* SearchUserViewController.swift */,
+				700FF75C2BF879B00014890A /* SearchUserViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -814,8 +820,10 @@
 				700FF7582BF878920014890A /* UserRepositoryImpl.swift in Sources */,
 				700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */,
 				700FF7552BF877700014890A /* Users.swift in Sources */,
+				700FF75F2BF87A310014890A /* SearchUsersMetadata.swift in Sources */,
 				700FF75B2BF8790F0014890A /* User.swift in Sources */,
 				70B7186A2BF793100095B9AD /* SearchUserViewController.swift in Sources */,
+				700FF75D2BF879B00014890A /* SearchUserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
