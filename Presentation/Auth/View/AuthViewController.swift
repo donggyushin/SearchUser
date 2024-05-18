@@ -8,28 +8,17 @@
 import UIKit
 import Then
 import SnapKit
-import MockData
-import Domain
 
 public final class AuthViewController: UIViewController {
     
-    private let requestGithubCodeUsecase: RequestGithubCodeUsecase
-    
     private lazy var githubLoginButton = UIButton(configuration: .borderedTinted(), primaryAction: UIAction(handler: { [weak self] _ in
-        self?.requestGithubCodeUsecase.implement()
+        let urlString = "https://github.com/login/oauth/authorize?client_id=Ov23ctO8MVeCSW1Otcnb"
+        guard let url: URL = .init(string: urlString) else { return }
+        UIApplication.shared.open(url)
     }))
         .then { button in
             button.setTitle("Sign in with Github", for: .normal)
         }
-    
-    public init(authRepository: AuthRepository) {
-        requestGithubCodeUsecase = .init(authRepository: authRepository)
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +34,6 @@ public final class AuthViewController: UIViewController {
 }
 
 #Preview {
-    let vc = AuthViewController(authRepository: AuthRepositoryImpl())
+    let vc = AuthViewController()
     return vc
 }

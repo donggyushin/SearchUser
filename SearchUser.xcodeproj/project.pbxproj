@@ -11,7 +11,6 @@
 		700D53E62BF7A84C00CA77B3 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; };
 		700D53E72BF7A84C00CA77B3 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		700D53EE2BF7A88C00CA77B3 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */; };
-		700D53F12BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53F02BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift */; };
 		700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */; };
 		700D53F92BF7AE8300CA77B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 700D53F82BF7AE8300CA77B3 /* SnapKit */; };
 		700FF7132BF85FB20014890A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 700FF7122BF85FB20014890A /* Kingfisher */; };
@@ -158,7 +157,6 @@
 		700D53DA2BF7A82D00CA77B3 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700D53DC2BF7A82D00CA77B3 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
-		700D53F02BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGithubCodeUsecase.swift; sourceTree = "<group>"; };
 		700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		700FF7192BF862CB0014890A /* MockData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700FF71B2BF862CB0014890A /* MockData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockData.h; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				700D53EC2BF7A87100CA77B3 /* Repository */,
-				700D53EF2BF7A91400CA77B3 /* Usecase */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -272,14 +269,6 @@
 				700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		700D53EF2BF7A91400CA77B3 /* Usecase */ = {
-			isa = PBXGroup;
-			children = (
-				700D53F02BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift */,
-			);
-			path = Usecase;
 			sourceTree = "<group>";
 		};
 		700D53F22BF7AA5300CA77B3 /* Auth */ = {
@@ -801,7 +790,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				700D53EE2BF7A88C00CA77B3 /* AuthRepository.swift in Sources */,
-				700D53F12BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift in Sources */,
 				700FF7482BF872F70014890A /* SearchUserUsecase.swift in Sources */,
 				700FF7452BF872B40014890A /* UserRepository.swift in Sources */,
 				700FF7422BF872550014890A /* User.swift in Sources */,
