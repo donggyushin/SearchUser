@@ -23,6 +23,7 @@
 		700FF7352BF8639D0014890A /* MockData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700FF7192BF862CB0014890A /* MockData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		700FF7392BF866000014890A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; };
 		700FF73A2BF866000014890A /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		700FF73E2BF86BDD0014890A /* TokenKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF73D2BF86BDD0014890A /* TokenKeychainManager.swift */; };
 		70B718472BF792710095B9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718462BF792710095B9AD /* AppDelegate.swift */; };
 		70B718492BF792710095B9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718482BF792710095B9AD /* SceneDelegate.swift */; };
 		70B7184B2BF792710095B9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7184A2BF792710095B9AD /* ViewController.swift */; };
@@ -147,6 +148,7 @@
 		700FF7192BF862CB0014890A /* MockData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700FF71B2BF862CB0014890A /* MockData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockData.h; sourceTree = "<group>"; };
 		700FF7262BF862EA0014890A /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
+		700FF73D2BF86BDD0014890A /* TokenKeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenKeychainManager.swift; sourceTree = "<group>"; };
 		70B718442BF792710095B9AD /* Search App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B718462BF792710095B9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B718482BF792710095B9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				70B718892BF79E880095B9AD /* MoyaGithub.swift */,
+				700FF73D2BF86BDD0014890A /* TokenKeychainManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				70B718A32BF7A0EF0095B9AD /* AuthRepositoryImpl.swift in Sources */,
 				70B7189E2BF7A0C40095B9AD /* MoyaGithub.swift in Sources */,
 				70B7189F2BF7A0CA0095B9AD /* MoyaGithubAPI.swift in Sources */,
+				700FF73E2BF86BDD0014890A /* TokenKeychainManager.swift in Sources */,
 				70B718A92BF7A3810095B9AD /* Token.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
