@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		700D53DD2BF7A82D00CA77B3 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 700D53DC2BF7A82D00CA77B3 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		700D53E12BF7A84500CA77B3 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; };
-		700D53E22BF7A84500CA77B3 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		700D53E62BF7A84C00CA77B3 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; };
 		700D53E72BF7A84C00CA77B3 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		700D53EE2BF7A88C00CA77B3 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */; };
@@ -17,6 +15,12 @@
 		700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */; };
 		700D53F92BF7AE8300CA77B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 700D53F82BF7AE8300CA77B3 /* SnapKit */; };
 		700FF7132BF85FB20014890A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 700FF7122BF85FB20014890A /* Kingfisher */; };
+		700FF71C2BF862CB0014890A /* MockData.h in Headers */ = {isa = PBXBuildFile; fileRef = 700FF71B2BF862CB0014890A /* MockData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		700FF7202BF862D40014890A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; };
+		700FF7212BF862D40014890A /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		700FF7272BF862EA0014890A /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF7262BF862EA0014890A /* AuthRepositoryImpl.swift */; };
+		700FF7342BF8639D0014890A /* MockData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700FF7192BF862CB0014890A /* MockData.framework */; };
+		700FF7352BF8639D0014890A /* MockData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 700FF7192BF862CB0014890A /* MockData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70B718472BF792710095B9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718462BF792710095B9AD /* AppDelegate.swift */; };
 		70B718492BF792710095B9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718482BF792710095B9AD /* SceneDelegate.swift */; };
 		70B7184B2BF792710095B9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7184A2BF792710095B9AD /* ViewController.swift */; };
@@ -39,19 +43,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		700D53E32BF7A84500CA77B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 70B718212BF791CA0095B9AD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 700D53D92BF7A82D00CA77B3;
-			remoteInfo = Domain;
-		};
 		700D53E82BF7A84C00CA77B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 70B718212BF791CA0095B9AD /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 700D53D92BF7A82D00CA77B3;
 			remoteInfo = Domain;
+		};
+		700FF7222BF862D40014890A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70B718212BF791CA0095B9AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 700D53D92BF7A82D00CA77B3;
+			remoteInfo = Domain;
+		};
+		700FF7362BF8639D0014890A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70B718212BF791CA0095B9AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 700FF7182BF862CB0014890A;
+			remoteInfo = MockData;
 		};
 		70B718612BF793010095B9AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -70,17 +81,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		700D53E52BF7A84500CA77B3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				700D53E22BF7A84500CA77B3 /* Domain.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		700D53EA2BF7A84C00CA77B3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +88,28 @@
 			dstSubfolderSpec = 10;
 			files = (
 				700D53E72BF7A84C00CA77B3 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		700FF7242BF862D40014890A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				700FF7212BF862D40014890A /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		700FF7382BF8639D0014890A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				700FF7352BF8639D0014890A /* MockData.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +134,9 @@
 		700D53ED2BF7A88C00CA77B3 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		700D53F02BF7A92200CA77B3 /* RequestGithubCodeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGithubCodeUsecase.swift; sourceTree = "<group>"; };
 		700D53F42BF7AA5E00CA77B3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		700FF7192BF862CB0014890A /* MockData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		700FF71B2BF862CB0014890A /* MockData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockData.h; sourceTree = "<group>"; };
+		700FF7262BF862EA0014890A /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
 		70B718442BF792710095B9AD /* Search App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B718462BF792710095B9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B718482BF792710095B9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +164,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		700FF7162BF862CB0014890A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700FF7202BF862D40014890A /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70B718412BF792710095B9AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -154,7 +187,7 @@
 			files = (
 				700FF7132BF85FB20014890A /* Kingfisher in Frameworks */,
 				700D53F92BF7AE8300CA77B3 /* SnapKit in Frameworks */,
-				700D53E12BF7A84500CA77B3 /* Domain.framework in Frameworks */,
+				700FF7342BF8639D0014890A /* MockData.framework in Frameworks */,
 				70B7187E2BF794050095B9AD /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +262,23 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		700FF71A2BF862CB0014890A /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				700FF7252BF862DB0014890A /* Auth */,
+				700FF71B2BF862CB0014890A /* MockData.h */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		700FF7252BF862DB0014890A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				700FF7262BF862EA0014890A /* AuthRepositoryImpl.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		70B718202BF791CA0095B9AD = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +298,7 @@
 				70B7185D2BF793010095B9AD /* Presentation.framework */,
 				70B718902BF7A04E0095B9AD /* DataLayer.framework */,
 				700D53DA2BF7A82D00CA77B3 /* Domain.framework */,
+				700FF7192BF862CB0014890A /* MockData.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,6 +320,7 @@
 		70B7185E2BF793010095B9AD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				700FF71A2BF862CB0014890A /* MockData */,
 				70B7185F2BF793010095B9AD /* Presentation.h */,
 				700D53F22BF7AA5300CA77B3 /* Auth */,
 				700D53F62BF7AA7E00CA77B3 /* User */,
@@ -362,6 +414,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		700FF7142BF862CB0014890A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700FF71C2BF862CB0014890A /* MockData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70B718582BF793010095B9AD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,6 +459,26 @@
 			productReference = 700D53DA2BF7A82D00CA77B3 /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		700FF7182BF862CB0014890A /* MockData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700FF71D2BF862CB0014890A /* Build configuration list for PBXNativeTarget "MockData" */;
+			buildPhases = (
+				700FF7142BF862CB0014890A /* Headers */,
+				700FF7152BF862CB0014890A /* Sources */,
+				700FF7162BF862CB0014890A /* Frameworks */,
+				700FF7172BF862CB0014890A /* Resources */,
+				700FF7242BF862D40014890A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				700FF7232BF862D40014890A /* PBXTargetDependency */,
+			);
+			name = MockData;
+			productName = MockData;
+			productReference = 700FF7192BF862CB0014890A /* MockData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		70B718432BF792710095B9AD /* App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70B718572BF792720095B9AD /* Build configuration list for PBXNativeTarget "App" */;
@@ -427,12 +507,12 @@
 				70B718592BF793010095B9AD /* Sources */,
 				70B7185A2BF793010095B9AD /* Frameworks */,
 				70B7185B2BF793010095B9AD /* Resources */,
-				700D53E52BF7A84500CA77B3 /* Embed Frameworks */,
+				700FF7382BF8639D0014890A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				700D53E42BF7A84500CA77B3 /* PBXTargetDependency */,
+				700FF7372BF8639D0014890A /* PBXTargetDependency */,
 			);
 			name = Presentation;
 			packageProductDependencies = (
@@ -481,6 +561,10 @@
 						CreatedOnToolsVersion = 15.3;
 						LastSwiftMigration = 1530;
 					};
+					700FF7182BF862CB0014890A = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
+					};
 					70B718432BF792710095B9AD = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -516,12 +600,20 @@
 				70B7185C2BF793010095B9AD /* Presentation */,
 				70B7188F2BF7A04E0095B9AD /* DataLayer */,
 				700D53D92BF7A82D00CA77B3 /* Domain */,
+				700FF7182BF862CB0014890A /* MockData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		700D53D82BF7A82D00CA77B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		700FF7172BF862CB0014890A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -564,6 +656,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		700FF7152BF862CB0014890A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700FF7272BF862EA0014890A /* AuthRepositoryImpl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70B718402BF792710095B9AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -597,15 +697,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		700D53E42BF7A84500CA77B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 700D53D92BF7A82D00CA77B3 /* Domain */;
-			targetProxy = 700D53E32BF7A84500CA77B3 /* PBXContainerItemProxy */;
-		};
 		700D53E92BF7A84C00CA77B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 700D53D92BF7A82D00CA77B3 /* Domain */;
 			targetProxy = 700D53E82BF7A84C00CA77B3 /* PBXContainerItemProxy */;
+		};
+		700FF7232BF862D40014890A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 700D53D92BF7A82D00CA77B3 /* Domain */;
+			targetProxy = 700FF7222BF862D40014890A /* PBXContainerItemProxy */;
+		};
+		700FF7372BF8639D0014890A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 700FF7182BF862CB0014890A /* MockData */;
+			targetProxy = 700FF7362BF8639D0014890A /* PBXContainerItemProxy */;
 		};
 		70B718622BF793010095B9AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -701,6 +806,79 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.searchapp.domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		700FF71E2BF862CB0014890A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YV58Q28W8Z;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.MockData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		700FF71F2BF862CB0014890A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YV58Q28W8Z;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.donggyu.MockData;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1044,6 +1222,15 @@
 			buildConfigurations = (
 				700D53DE2BF7A82D00CA77B3 /* Debug */,
 				700D53DF2BF7A82D00CA77B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700FF71D2BF862CB0014890A /* Build configuration list for PBXNativeTarget "MockData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				700FF71E2BF862CB0014890A /* Debug */,
+				700FF71F2BF862CB0014890A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
