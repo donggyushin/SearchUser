@@ -11,7 +11,7 @@ import Moya
 /// https://www.kodeco.com/5121-moya-tutorial-for-ios-getting-started
 
 enum GithubAPI {
-    case users(page: Int)
+    case users(query: String, page: Int, perPage: Int)
 }
 
 extension GithubAPI: TargetType {
@@ -33,8 +33,16 @@ extension GithubAPI: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .users(let page):
-            return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
+        case .users(let query, let page, let perPage):
+            return .requestParameters(
+                parameters: [
+                    "q": query,
+                    "page": page,
+                    "per_page": perPage,
+                    "sort": "followers"
+                ],
+                encoding: URLEncoding.queryString
+            )
         }
     }
     
