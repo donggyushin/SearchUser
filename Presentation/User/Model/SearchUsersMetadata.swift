@@ -11,4 +11,10 @@ struct SearchUsersMetadata {
     let query: String
     var page: Int
     var canGetMoreUsers: Bool
+    
+    init(query: String) {
+        self.query = query
+        page = 1
+        canGetMoreUsers = false
+    }
 }

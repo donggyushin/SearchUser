@@ -58,6 +58,7 @@ final class SearchUserTextField: UIView {
         }
     
     private lazy var searchButton = UIButton(configuration: .borderedProminent(), primaryAction: .init(handler: { [weak self] _ in
+        self?.textField.resignFirstResponder()
         self?.search.send()
     }))
         .then { button in
@@ -124,6 +125,10 @@ final class SearchUserTextField: UIView {
 
 extension SearchUserTextField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.text?.isEmpty == false
+        let shouldReturn = textField.text?.isEmpty == false
+        if shouldReturn {
+            search.send()
+        }
+        return shouldReturn
     }
 }

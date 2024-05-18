@@ -14,7 +14,7 @@ final class SearchUserViewModel {
     @Published private(set) var users: [User] = []
     @Published private(set) var loading: Bool = false
     @Published private(set) var errorMessage: String? = nil
-    @Published private var metadata: SearchUsersMetadata = .init(query: "", page: 0, canGetMoreUsers: true)
+    @Published private var metadata: SearchUsersMetadata = .init(query: "")
     
     private let searchUserUsecase: SearchUserUsecase
     
@@ -24,13 +24,13 @@ final class SearchUserViewModel {
     
     private var searchTask: Task<(), Error>? = nil
     func search() {
-        reinitialize()
-        guard metadata.canGetMoreUsers == true else { return }
         guard searchTask == nil else { return }
         searchTask = Task {
             do {
                 errorMessage = nil
                 loading = true
+                metadata = .init(query: query)
+                self.users = []
                 let (users, totalCount) = try await searchUserUsecase.implement(query: query, page: metadata.page)
                 self.users.append(contentsOf: users.map({ .init(domain: $0) }))
                 
@@ -40,13 +40,14 @@ final class SearchUserViewModel {
                 errorMessage = error.localizedDescription
             }
             loading = false
+            searchTask = nil
         }
     }
     
     private var loadMoreUsersTask: Task<(), Error>? = nil
     func loadMoreUsers() {
-        guard metadata.canGetMoreUsers == true else { return }
         guard loadMoreUsersTask == nil else { return }
+        guard metadata.canGetMoreUsers == true else { return }
         loadMoreUsersTask = Task {
             do {
                 errorMessage = nil
@@ -59,14 +60,8 @@ final class SearchUserViewModel {
             } catch {
                 errorMessage = error.localizedDescription
             }
+            loadMoreUsersTask = nil
             loading = false
-        }
-    }
-    
-    private func reinitialize() {
-        if query != metadata.query {
-            metadata = .init(query: query, page: 1, canGetMoreUsers: true)
-            self.users = []
         }
     }
 }
