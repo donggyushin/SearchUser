@@ -55,7 +55,7 @@ final class SearchUserCell: UITableViewCell {
     private func configUI() {
         addSubview(horizontalStackView)
         horizontalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
     }
 }

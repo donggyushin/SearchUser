@@ -25,6 +25,7 @@ final class SearchUserTextField: UIView {
     private lazy var trashIcon = UIImageView(image: .init(systemName: "trash"))
         .then { image in
             image.tintColor = .label
+            image.isUserInteractionEnabled = true
             image.snp.makeConstraints { make in
                 make.width.equalTo(30)
             }
@@ -36,6 +37,7 @@ final class SearchUserTextField: UIView {
     private lazy var searchIcon = UIImageView(image: .init(systemName: "magnifyingglass"))
         .then { image in
             image.tintColor = .label
+            image.isUserInteractionEnabled = true
             image.snp.makeConstraints { make in
                 make.width.equalTo(30)
             }

@@ -17,6 +17,7 @@ public final class SearchUserViewController: UIViewController {
     private lazy var tableView = UITableView()
         .then { tableView in
             tableView.dataSource = self
+            tableView.delegate = self
             tableView.register(SearchUserCell.self, forCellReuseIdentifier: SearchUserCell.identifier)
         }
     
@@ -58,7 +59,6 @@ public final class SearchUserViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 self?.viewModel.search()
-                print("dg: 여기안오냐?")
             }
             .store(in: &cancellables)
     }
@@ -88,6 +88,12 @@ extension SearchUserViewController: UITableViewDataSource {
         let user = viewModel.users[indexPath.row]
         cell.configUI(user: user)
         return cell
+    }
+}
+
+extension SearchUserViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 
