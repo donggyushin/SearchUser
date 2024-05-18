@@ -17,9 +17,7 @@ final class TokenKeychainManager {
         
         guard let data = token.data(using: .utf8) else { return }
         
-        
         let query: CFDictionary = [
-            // 암호화 불필요
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: service,
             kSecAttrAccount: identifier,
