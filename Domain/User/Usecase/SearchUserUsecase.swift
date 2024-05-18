@@ -15,6 +15,6 @@ public final class SearchUserUsecase {
     }
     
     public func implement(query: String, page: Int, perPage: Int = 30) async throws -> ([User], totalCount: Int) {
-        try await userRepository.get(query: query, page: page)
+        try await userRepository.get(query: query, page: page, perPage: perPage)
     }
 }

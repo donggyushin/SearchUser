@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol UserRepository {
-    func get(query: String, page: Int) async throws -> ([User], totalCount: Int)
+    func get(query: String, page: Int, perPage: Int) async throws -> ([User], totalCount: Int)
 }
