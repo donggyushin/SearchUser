@@ -14,7 +14,6 @@ final class SearchUserTextField: UIView {
     
     let text = PassthroughSubject<String, Never>()
     let search = PassthroughSubject<(), Never>()
-    let delete = PassthroughSubject<(), Never>()
     
     private lazy var textField = UITextField()
         .then { textField in
@@ -105,7 +104,7 @@ final class SearchUserTextField: UIView {
             .rx
             .event
             .subscribe(onNext: { [weak self] _ in
-                self?.delete.send()
+                self?.textField.text = ""
             })
             .disposed(by: disposeBag)
         
