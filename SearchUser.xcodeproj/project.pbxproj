@@ -345,8 +345,8 @@
 		700FF7492BF875120014890A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				700FF74A2BF8751F0014890A /* User.swift */,
 				700FF74F2BF876070014890A /* SearchUserResponse.swift */,
+				700FF74A2BF8751F0014890A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,8 +379,8 @@
 		700FF7562BF878870014890A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				700FF7572BF878920014890A /* UserRepositoryImpl.swift */,
 				700FF76D2BF8A5AC0014890A /* AuthRepositoryImpl.swift */,
+				700FF7572BF878920014890A /* UserRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -446,10 +446,10 @@
 		70B7186B2BF793B10095B9AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				700FF7682BF887750014890A /* SearchUserCell.swift */,
 				700FF7612BF87F810014890A /* SearchUserTextField.swift */,
 				70B718692BF793100095B9AD /* SearchUserViewController.swift */,
 				700FF75C2BF879B00014890A /* SearchUserViewModel.swift */,
-				700FF7682BF887750014890A /* SearchUserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
