@@ -5,14 +5,16 @@
 //  Created by 신동규 on 5/17/24.
 //
 
-import Foundation
 import UIKit
 import Moya
+import Domain
+import Combine
 
-public final class AuthRepositoryImpl {
+public final class AuthRepositoryImpl: AuthRepository {
     public static let shared = AuthRepositoryImpl()
     
-    @Published var accessToken: String? = nil
+    public var accessToken: AnyPublisher<String?, Never> { $_accessToken.eraseToAnyPublisher() }
+    @Published var _accessToken: String? = TokenKeychainManager().get()
     
     private let clientID = "Ov23ctO8MVeCSW1Otcnb"
     
@@ -35,7 +37,8 @@ public final class AuthRepositoryImpl {
                     
                     do {
                         let token = try decoder.decode(Token.self, from: data)
-                        self.accessToken = token.access_token
+                        self._accessToken = token.access_token
+                        TokenKeychainManager().post(token: token.access_token)
                     } catch {
                         continuation.resume(throwing: error)
                     }
