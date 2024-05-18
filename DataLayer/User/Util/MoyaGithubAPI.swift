@@ -9,7 +9,6 @@ import Alamofire
 import Moya
 
 /// https://www.kodeco.com/5121-moya-tutorial-for-ios-getting-started
-
 enum GithubAPI {
     case users(query: String, page: Int, perPage: Int)
 }

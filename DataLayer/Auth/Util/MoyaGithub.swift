@@ -8,6 +8,7 @@
 import Alamofire
 import Moya
 
+/// https://www.kodeco.com/5121-moya-tutorial-for-ios-getting-started
 enum Github {
     static private let clientID = "Ov23ctO8MVeCSW1Otcnb"
     static private let clientSecret = "2ec66762a464132716564e0ec931f277eb5f8742"

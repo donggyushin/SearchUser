@@ -10,6 +10,7 @@ import Moya
 import Domain
 import Combine
 
+// https://hilily.tistory.com/38
 public final class AuthRepositoryImpl: AuthRepository {
     public static let shared = AuthRepositoryImpl()
     
