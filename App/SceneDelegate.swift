@@ -51,7 +51,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     if self.window?.rootViewController is Presentation.SearchUserViewController == false {
                         self.window?.rootViewController = 
                         Presentation.SearchUserViewController(
-                            userRepository: UserRepositoryImpl.shared
+                            userRepository: UserRepositoryImpl.shared, 
+                            authRepository: AuthRepositoryImpl.shared
                         )
                     }
                 }
@@ -61,4 +62,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .store(in: &cancellables)
     }
 }
-

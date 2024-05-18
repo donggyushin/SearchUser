@@ -8,8 +8,10 @@
 import Foundation
 import Domain
 
-final class UserRepositoryImpl: UserRepository {
-    func get(query: String, page: Int, perPage: Int) async throws -> ([Domain.User], totalCount: Int) {
+public final class UserRepositoryImpl: UserRepository {
+    public init() { }
+    
+    public func get(query: String, page: Int, perPage: Int) async throws -> ([Domain.User], totalCount: Int) {
         let users: [Domain.User] = [
             USER_1,
             USER_2,
