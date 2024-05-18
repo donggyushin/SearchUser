@@ -11,7 +11,7 @@ import Domain
 struct User {
     let id: Int
     let login: String
-    let avatarUrl: String?
+    let avatarUrl: String
     let url: String
     
     init(domain: Domain.User) {

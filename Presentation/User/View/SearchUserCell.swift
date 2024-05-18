@@ -51,7 +51,7 @@ final class SearchUserCell: UITableViewCell {
     }
     
     func configUI(user: User) {
-        let url = URL(string: user.avatarUrl ?? "")
+        let url = URL(string: user.avatarUrl)
         avatarImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "person"), options: [.transition(.fade(0.2))])
         loginLabel.text = user.login
         urlLabel.text = user.url
