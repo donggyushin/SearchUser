@@ -30,9 +30,8 @@ final class SearchUserViewModel {
                 errorMessage = nil
                 loading = true
                 metadata = .init(query: query)
-                self.users = []
                 let (users, totalCount) = try await searchUserUsecase.implement(query: query, page: metadata.page)
-                self.users.append(contentsOf: users.map({ .init(domain: $0) }))
+                self.users = users.map({ .init(domain: $0) })
                 
                 metadata.page += 1
                 metadata.canGetMoreUsers = self.users.count < totalCount

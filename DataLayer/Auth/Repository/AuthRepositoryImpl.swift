@@ -19,7 +19,7 @@ public final class AuthRepositoryImpl: AuthRepository {
     private init() { }
     
     public func logout() {
-        _accessToken = nil 
+        _accessToken = nil
     }
     
     public func requestAccessToken(code: String) async throws {
@@ -45,5 +45,3 @@ public final class AuthRepositoryImpl: AuthRepository {
         }
     }
 }
-
-
