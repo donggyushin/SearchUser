@@ -14,7 +14,7 @@ public final class AuthRepositoryImpl: AuthRepository {
     public static let shared = AuthRepositoryImpl()
     
     public var accessToken: AnyPublisher<String?, Never> { $_accessToken.eraseToAnyPublisher() }
-    @Published var _accessToken: String? = nil
+    @Published var _accessToken: String? = TokenKeychainManager().get()
     
     private let clientID = "Ov23ctO8MVeCSW1Otcnb"
     
@@ -38,6 +38,7 @@ public final class AuthRepositoryImpl: AuthRepository {
                     do {
                         let token = try decoder.decode(Token.self, from: data)
                         self._accessToken = token.access_token
+                        TokenKeychainManager().post(token: token.access_token)
                     } catch {
                         continuation.resume(throwing: error)
                     }
