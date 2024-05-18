@@ -12,6 +12,8 @@ import MockData
 public final class SearchUserViewController: UIViewController {
     private let viewModel: SearchUserViewModel
     
+    private let textField = SearchUserTextField()
+    
     public init(userRepository: UserRepository) {
         viewModel = .init(userRepository: userRepository)
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +29,11 @@ public final class SearchUserViewController: UIViewController {
     }
     
     private func configUI() {
-        
+        view.addSubview(textField)
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.equalToSuperview()
+        }
     }
 }
 

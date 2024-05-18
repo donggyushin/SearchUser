@@ -9,8 +9,12 @@ import Foundation
 import Domain
 import Moya
 
-final class UserRepositoryImpl: UserRepository {
-    func get(query: String, page: Int, perPage: Int) async throws -> ([Domain.User], totalCount: Int) {
+public final class UserRepositoryImpl: UserRepository {
+    public static let shared = UserRepositoryImpl()
+    
+    private init() { }
+    
+    public func get(query: String, page: Int, perPage: Int) async throws -> ([Domain.User], totalCount: Int) {
         return try await withCheckedThrowingContinuation { continuation in
             let provider = MoyaProvider<GithubAPI>()
             provider.request(.users(query: query, page: page, perPage: perPage)) { result in

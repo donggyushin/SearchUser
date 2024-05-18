@@ -35,6 +35,9 @@
 		700FF75B2BF8790F0014890A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF75A2BF8790F0014890A /* User.swift */; };
 		700FF75D2BF879B00014890A /* SearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF75C2BF879B00014890A /* SearchUserViewModel.swift */; };
 		700FF75F2BF87A310014890A /* SearchUsersMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF75E2BF87A310014890A /* SearchUsersMetadata.swift */; };
+		700FF7622BF87F810014890A /* SearchUserTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF7612BF87F810014890A /* SearchUserTextField.swift */; };
+		700FF7652BF883BC0014890A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 700FF7642BF883BC0014890A /* RxCocoa */; };
+		700FF7672BF884350014890A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 700FF7662BF884350014890A /* RxSwift */; };
 		70B718472BF792710095B9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718462BF792710095B9AD /* AppDelegate.swift */; };
 		70B718492BF792710095B9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718482BF792710095B9AD /* SceneDelegate.swift */; };
 		70B7184B2BF792710095B9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7184A2BF792710095B9AD /* ViewController.swift */; };
@@ -171,6 +174,7 @@
 		700FF75A2BF8790F0014890A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		700FF75C2BF879B00014890A /* SearchUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewModel.swift; sourceTree = "<group>"; };
 		700FF75E2BF87A310014890A /* SearchUsersMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersMetadata.swift; sourceTree = "<group>"; };
+		700FF7612BF87F810014890A /* SearchUserTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTextField.swift; sourceTree = "<group>"; };
 		70B718442BF792710095B9AD /* Search App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B718462BF792710095B9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B718482BF792710095B9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,8 +224,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700FF7672BF884350014890A /* RxSwift in Frameworks */,
 				700FF7132BF85FB20014890A /* Kingfisher in Frameworks */,
 				700D53F92BF7AE8300CA77B3 /* SnapKit in Frameworks */,
+				700FF7652BF883BC0014890A /* RxCocoa in Frameworks */,
 				700FF7342BF8639D0014890A /* MockData.framework in Frameworks */,
 				70B7187E2BF794050095B9AD /* Then in Frameworks */,
 			);
@@ -462,6 +468,7 @@
 		70B7186B2BF793B10095B9AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				700FF7612BF87F810014890A /* SearchUserTextField.swift */,
 				70B718692BF793100095B9AD /* SearchUserViewController.swift */,
 				700FF75C2BF879B00014890A /* SearchUserViewModel.swift */,
 			);
@@ -655,6 +662,8 @@
 				70B7187D2BF794050095B9AD /* Then */,
 				700D53F82BF7AE8300CA77B3 /* SnapKit */,
 				700FF7122BF85FB20014890A /* Kingfisher */,
+				700FF7642BF883BC0014890A /* RxCocoa */,
+				700FF7662BF884350014890A /* RxSwift */,
 			);
 			productName = Presentation;
 			productReference = 70B7185D2BF793010095B9AD /* Presentation.framework */;
@@ -727,6 +736,7 @@
 				70B7187F2BF7943D0095B9AD /* XCRemoteSwiftPackageReference "Moya" */,
 				700D53F72BF7AE8300CA77B3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				700FF7112BF85FA60014890A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				700FF7632BF883BC0014890A /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 70B7182A2BF791CA0095B9AD /* Products */;
 			projectDirPath = "";
@@ -819,6 +829,7 @@
 			files = (
 				700FF7582BF878920014890A /* UserRepositoryImpl.swift in Sources */,
 				700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */,
+				700FF7622BF87F810014890A /* SearchUserTextField.swift in Sources */,
 				700FF7552BF877700014890A /* Users.swift in Sources */,
 				700FF75F2BF87A310014890A /* SearchUsersMetadata.swift in Sources */,
 				700FF75B2BF8790F0014890A /* User.swift in Sources */,
@@ -1443,6 +1454,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		700FF7632BF883BC0014890A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
 		70B7187C2BF794040095B9AD /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
@@ -1471,6 +1490,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 700FF7112BF85FA60014890A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		700FF7642BF883BC0014890A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 700FF7632BF883BC0014890A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		700FF7662BF884350014890A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 700FF7632BF883BC0014890A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		70B7187D2BF794050095B9AD /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
