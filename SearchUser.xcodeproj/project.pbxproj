@@ -400,7 +400,6 @@
 				70B718452BF792710095B9AD /* App */,
 				70B718912BF7A04E0095B9AD /* DataLayer */,
 				700D53DB2BF7A82D00CA77B3 /* Domain */,
-				70B718A42BF7A2DF0095B9AD /* Frameworks */,
 				70B7185E2BF793010095B9AD /* Presentation */,
 				70B7182A2BF791CA0095B9AD /* Products */,
 			);
@@ -507,13 +506,6 @@
 				70B718A22BF7A0EF0095B9AD /* AuthRepositoryImpl.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		70B718A42BF7A2DF0095B9AD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		70B718A72BF7A3780095B9AD /* Model */ = {
