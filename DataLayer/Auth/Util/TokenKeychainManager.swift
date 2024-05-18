@@ -8,6 +8,7 @@
 import Foundation
 import Security
 
+/// https://stackoverflow.com/questions/68209016/store-accesstoken-in-ios-keychain
 final class TokenKeychainManager {
     
     let service = "com.donggyu.searchapp"
