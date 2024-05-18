@@ -21,6 +21,7 @@ public final class SearchUserViewController: UIViewController {
             tableView.delegate = self
             tableView.register(SearchUserCell.self, forCellReuseIdentifier: SearchUserCell.identifier)
         }
+    private let loadingView = UIActivityIndicatorView(style: .large)
     
     private var cancellables = Set<AnyCancellable>()
     public init(
@@ -48,6 +49,17 @@ public final class SearchUserViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        viewModel
+            .$loading
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] loading in
+                loading ?
+                self?.loadingView.startAnimating() :
+                self?.loadingView.stopAnimating()
             }
             .store(in: &cancellables)
         
@@ -79,6 +91,11 @@ public final class SearchUserViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom)
             make.left.right.bottom.equalToSuperview()
+        }
+        
+        view.addSubview(loadingView)
+        loadingView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
     
