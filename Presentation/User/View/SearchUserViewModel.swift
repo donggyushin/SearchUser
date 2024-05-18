@@ -28,7 +28,6 @@ final class SearchUserViewModel {
         guard searchTask == nil else { return }
         searchTask = Task {
             do {
-                showEmptyUserListView = false
                 errorMessage = nil
                 loading = true
                 metadata = .init(query: query)
