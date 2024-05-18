@@ -24,15 +24,6 @@ final class SearchUserCell: UITableViewCell {
     
     private lazy var loginLabel = UILabel()
     
-    private lazy var horizontalStackView = UIStackView(arrangedSubviews: [
-        avatarImageView,
-        loginLabel,
-        UIView()
-    ])
-        .then { stackView in
-            stackView.spacing = 20
-        }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configUI()
@@ -53,9 +44,16 @@ final class SearchUserCell: UITableViewCell {
     }
     
     private func configUI() {
-        addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+        addSubview(avatarImageView)
+        avatarImageView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.centerY.equalToSuperview()
+        }
+        
+        addSubview(loginLabel)
+        loginLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalTo(avatarImageView.snp.right).offset(20)
         }
     }
 }

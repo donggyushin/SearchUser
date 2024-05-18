@@ -8,12 +8,12 @@
 import Foundation
 
 public struct User {
-    public let id: String
+    public let id: Int
     public let login: String
     public let avatarUrl: String?
     public let url: String
     
-    public init(id: String, login: String, avatarUrl: String?, url: String) {
+    public init(id: Int, login: String, avatarUrl: String?, url: String) {
         self.id = id
         self.login = login
         self.avatarUrl = avatarUrl

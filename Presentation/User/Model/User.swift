@@ -9,7 +9,7 @@ import Foundation
 import Domain
 
 struct User {
-    let id: String
+    let id: Int
     let login: String
     let avatarUrl: String?
     let url: String
