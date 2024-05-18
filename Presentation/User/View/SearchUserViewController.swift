@@ -93,7 +93,9 @@ extension SearchUserViewController: UITableViewDataSource {
 
 extension SearchUserViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let data = viewModel.users[indexPath.row]
+        guard let url = URL(string: data.url) else { return }
+        UIApplication.shared.open(url)
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
