@@ -12,4 +12,5 @@ public protocol AuthRepository {
     var accessToken: AnyPublisher<String?, Never> { get }
     
     func requestAccessToken(code: String) async throws
+    func logout()
 }

@@ -18,6 +18,10 @@ public final class AuthRepositoryImpl: AuthRepository {
     
     private init() { }
     
+    public func logout() {
+        _accessToken = nil 
+    }
+    
     public func requestAccessToken(code: String) async throws {
         return try await withCheckedThrowingContinuation { continuation in
             let provider = MoyaProvider<Github>()
