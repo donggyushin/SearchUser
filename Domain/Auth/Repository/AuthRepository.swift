@@ -11,6 +11,6 @@ import Combine
 public protocol AuthRepository {
     var accessToken: AnyPublisher<String?, Never> { get }
     
-    func requestCode()
     func requestAccessToken(code: String) async throws
+    func logout()
 }

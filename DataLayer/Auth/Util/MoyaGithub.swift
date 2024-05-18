@@ -53,6 +53,4 @@ extension Github: TargetType {
     var headers: [String : String]? {
         ["Accept": "application/json"]
     }
-    
-    
 }

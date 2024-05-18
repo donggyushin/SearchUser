@@ -12,6 +12,7 @@ import Combine
 
 public final class SearchUserViewController: UIViewController {
     private let viewModel: SearchUserViewModel
+    private let logoutUsecase: LogoutUsecase
     
     private let textField = SearchUserTextField()
     private lazy var tableView = UITableView()
@@ -22,8 +23,12 @@ public final class SearchUserViewController: UIViewController {
         }
     
     private var cancellables = Set<AnyCancellable>()
-    public init(userRepository: UserRepository) {
+    public init(
+        userRepository: UserRepository,
+        authRepository: AuthRepository
+    ) {
         viewModel = .init(userRepository: userRepository)
+        logoutUsecase = .init(authRepository: authRepository)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -76,6 +81,18 @@ public final class SearchUserViewController: UIViewController {
             make.left.right.bottom.equalToSuperview()
         }
     }
+    
+    private func presentErrorAlert(message: String) {
+        let alert: UIAlertController = .init(
+            title: "Error Occured",
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(.init(title: "Ok", style: .default, handler: { [weak self] _ in
+            self?.logoutUsecase.implement()
+        }))
+        self.present(alert, animated: true)
+    }
 }
 
 extension SearchUserViewController: UITableViewDataSource {
@@ -93,11 +110,25 @@ extension SearchUserViewController: UITableViewDataSource {
 
 extension SearchUserViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let data = viewModel.users[indexPath.row]
+        guard let url = URL(string: data.url) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.users.count - 1 {
+            viewModel.loadMoreUsers()
+        }
     }
 }
 
 #Preview {
-    let vc = SearchUserViewController(userRepository: UserRepositoryImpl())
+    let vc = SearchUserViewController(
+        userRepository: UserRepositoryImpl(),
+        authRepository: AuthRepositoryImpl())
     return vc
 }

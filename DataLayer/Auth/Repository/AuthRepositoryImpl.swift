@@ -16,14 +16,10 @@ public final class AuthRepositoryImpl: AuthRepository {
     public var accessToken: AnyPublisher<String?, Never> { $_accessToken.eraseToAnyPublisher() }
     @Published var _accessToken: String? = TokenKeychainManager().get()
     
-    private let clientID = "Ov23ctO8MVeCSW1Otcnb"
-    
     private init() { }
     
-    public func requestCode() {
-        let urlString = "https://github.com/login/oauth/authorize?client_id=\(clientID)"
-        guard let url: URL = .init(string: urlString) else { return }
-        UIApplication.shared.open(url)
+    public func logout() {
+        _accessToken = nil
     }
     
     public func requestAccessToken(code: String) async throws {
@@ -49,5 +45,3 @@ public final class AuthRepositoryImpl: AuthRepository {
         }
     }
 }
-
-

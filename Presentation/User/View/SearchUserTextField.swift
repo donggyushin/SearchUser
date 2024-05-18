@@ -19,10 +19,14 @@ final class SearchUserTextField: UIView {
         .then { textField in
             textField.placeholder = "Search Users"
             textField.returnKeyType = .search
+            textField.delegate = self
+            textField.snp.makeConstraints { make in
+                make.height.equalTo(40)
+            }
         }
     
     private let tapTrashIcon = UITapGestureRecognizer()
-    private lazy var trashIcon = UIImageView(image: .init(systemName: "trash"))
+    private lazy var trashIcon = UIImageView(image: .init(systemName: "xmark"))
         .then { image in
             image.tintColor = .label
             image.isUserInteractionEnabled = true
@@ -33,21 +37,35 @@ final class SearchUserTextField: UIView {
             image.addGestureRecognizer(tapTrashIcon)
         }
     
-    private let tapSearchIcon = UITapGestureRecognizer()
-    private lazy var searchIcon = UIImageView(image: .init(systemName: "magnifyingglass"))
-        .then { image in
-            image.tintColor = .label
-            image.isUserInteractionEnabled = true
-            image.snp.makeConstraints { make in
-                make.width.equalTo(30)
+    private lazy var textFieldContainer = UIView()
+        .then { container in
+            container.backgroundColor = .secondarySystemGroupedBackground
+            container.layer.cornerRadius = 8
+            container.clipsToBounds = true
+            
+            container.addSubview(trashIcon)
+            trashIcon.snp.makeConstraints { make in
+                make.centerY.equalToSuperview()
+                make.right.equalToSuperview().inset(10)
             }
-            image.contentMode = .scaleAspectFit
-            image.addGestureRecognizer(tapSearchIcon)
+            
+            container.addSubview(textField)
+            textField.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
+                make.right.equalTo(trashIcon.snp.left)
+                make.left.equalToSuperview().inset(10)
+            }
         }
     
-    private lazy var horizontalStackView = UIStackView(arrangedSubviews: [textField, trashIcon, searchIcon])
-        .then { stackView in
-            stackView.axis = .horizontal
+    private lazy var searchButton = UIButton(configuration: .borderedProminent(), primaryAction: .init(handler: { [weak self] _ in
+        self?.textField.resignFirstResponder()
+        self?.search.send()
+    }))
+        .then { button in
+            button.setTitle("Search", for: .normal)
+            button.snp.makeConstraints { make in
+                make.height.equalTo(40)
+            }
         }
     
     private let disposeBag = DisposeBag()
@@ -62,16 +80,21 @@ final class SearchUserTextField: UIView {
     }
     
     private func configUI() {
-        backgroundColor = .secondarySystemBackground
-        layer.cornerRadius = 8
-        clipsToBounds = true
         snp.makeConstraints { make in
             make.height.equalTo(60)
         }
         
-        addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(8)
+        addSubview(searchButton)
+        searchButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().inset(20)
+        }
+        
+        addSubview(textFieldContainer)
+        textFieldContainer.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalTo(searchButton.snp.left).offset(-15)
+            make.left.equalToSuperview()
         }
     }
     
@@ -83,23 +106,8 @@ final class SearchUserTextField: UIView {
             .subscribe(onNext: { [weak self] text in
                 self?.text.send(text)
                 self?.trashIcon.isHidden = text.isEmpty
+                self?.searchButton.isEnabled = !text.isEmpty
             })
-            .disposed(by: disposeBag)
-        
-        textField
-            .rx
-            .controlEvent(.editingDidEndOnExit)
-            .subscribe(onNext: { [weak self] _ in
-                self?.search.send()
-            })
-            .disposed(by: disposeBag)
-        
-        textField
-            .rx
-            .text
-            .orEmpty
-            .map({ $0.count >= 1 })
-            .bind(to: textField.rx.isEnabled)
             .disposed(by: disposeBag)
         
         tapTrashIcon
@@ -107,15 +115,20 @@ final class SearchUserTextField: UIView {
             .event
             .subscribe(onNext: { [weak self] _ in
                 self?.textField.text = ""
+                self?.trashIcon.isHidden = true
+                self?.searchButton.isEnabled = false
+                self?.text.send("")
             })
             .disposed(by: disposeBag)
-        
-        tapSearchIcon
-            .rx
-            .event
-            .subscribe(onNext: { [weak self] _ in
-                self?.search.send()
-            })
-            .disposed(by: disposeBag)
+    }
+}
+
+extension SearchUserTextField: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let shouldReturn = textField.text?.isEmpty == false
+        if shouldReturn {
+            search.send()
+        }
+        return shouldReturn
     }
 }

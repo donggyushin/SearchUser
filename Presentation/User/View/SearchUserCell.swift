@@ -23,14 +23,17 @@ final class SearchUserCell: UITableViewCell {
         }
     
     private lazy var loginLabel = UILabel()
+    private lazy var urlLabel = UILabel()
+        .then { label in
+            label.textColor = .secondaryLabel
+        }
     
-    private lazy var horizontalStackView = UIStackView(arrangedSubviews: [
-        avatarImageView,
+    private lazy var verticalStackView = UIStackView(arrangedSubviews: [
         loginLabel,
-        UIView()
+        urlLabel
     ])
         .then { stackView in
-            stackView.spacing = 20
+            stackView.axis = .vertical
         }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -44,18 +47,27 @@ final class SearchUserCell: UITableViewCell {
     override func prepareForReuse() {
         avatarImageView.image = nil
         loginLabel.text = nil
+        urlLabel.text = nil
     }
     
     func configUI(user: User) {
         let url = URL(string: user.avatarUrl ?? "")
         avatarImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "person"), options: [.transition(.fade(0.2))])
         loginLabel.text = user.login
+        urlLabel.text = user.url
     }
     
     private func configUI() {
-        addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+        addSubview(avatarImageView)
+        avatarImageView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.centerY.equalToSuperview()
+        }
+        
+        addSubview(verticalStackView)
+        verticalStackView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalTo(avatarImageView.snp.right).offset(20)
         }
     }
 }

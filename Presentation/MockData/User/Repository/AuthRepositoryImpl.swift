@@ -1,5 +1,5 @@
 //
-//  AuthRepositoryImpl.swift
+//  AuthRepository.swift
 //  MockData
 //
 //  Created by 신동규 on 5/18/24.
@@ -15,7 +15,11 @@ public final class AuthRepositoryImpl: AuthRepository {
     
     public init() { }
     
-    public func requestCode() { }
+    public func requestAccessToken(code: String) async throws {
+        
+    }
     
-    public func requestAccessToken(code: String) async throws { }
+    public func logout() {
+        
+    }
 }
