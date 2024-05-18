@@ -39,6 +39,7 @@
 		700FF76E2BF8A5AC0014890A /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF76D2BF8A5AC0014890A /* AuthRepositoryImpl.swift */; };
 		700FF76F2BF8A5B20014890A /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF7572BF878920014890A /* UserRepositoryImpl.swift */; };
 		700FF7702BF8A5B70014890A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700FF7542BF877700014890A /* Users.swift */; };
+		7069CE152BF90203004AAF26 /* SearchUserEmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069CE142BF90203004AAF26 /* SearchUserEmptyListView.swift */; };
 		70B718472BF792710095B9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718462BF792710095B9AD /* AppDelegate.swift */; };
 		70B718492BF792710095B9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B718482BF792710095B9AD /* SceneDelegate.swift */; };
 		70B7184B2BF792710095B9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7184A2BF792710095B9AD /* ViewController.swift */; };
@@ -177,6 +178,7 @@
 		700FF7682BF887750014890A /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
 		700FF76B2BF8A5100014890A /* LogoutUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUsecase.swift; sourceTree = "<group>"; };
 		700FF76D2BF8A5AC0014890A /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
+		7069CE142BF90203004AAF26 /* SearchUserEmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserEmptyListView.swift; sourceTree = "<group>"; };
 		70B718442BF792710095B9AD /* Search App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B718462BF792710095B9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B718482BF792710095B9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				700FF7682BF887750014890A /* SearchUserCell.swift */,
+				7069CE142BF90203004AAF26 /* SearchUserEmptyListView.swift */,
 				700FF7612BF87F810014890A /* SearchUserTextField.swift */,
 				70B718692BF793100095B9AD /* SearchUserViewController.swift */,
 				700FF75C2BF879B00014890A /* SearchUserViewModel.swift */,
@@ -811,6 +814,7 @@
 				700D53F52BF7AA5E00CA77B3 /* AuthViewController.swift in Sources */,
 				700FF7622BF87F810014890A /* SearchUserTextField.swift in Sources */,
 				700FF75F2BF87A310014890A /* SearchUsersMetadata.swift in Sources */,
+				7069CE152BF90203004AAF26 /* SearchUserEmptyListView.swift in Sources */,
 				700FF7692BF887750014890A /* SearchUserCell.swift in Sources */,
 				700FF75B2BF8790F0014890A /* User.swift in Sources */,
 				70B7186A2BF793100095B9AD /* SearchUserViewController.swift in Sources */,

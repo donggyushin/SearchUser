@@ -21,6 +21,8 @@ public final class SearchUserViewController: UIViewController {
             tableView.delegate = self
             tableView.register(SearchUserCell.self, forCellReuseIdentifier: SearchUserCell.identifier)
         }
+    private lazy var searchUserEmptyListView = SearchUserEmptyListView()
+    
     private let loadingView = UIActivityIndicatorView(style: .large)
     
     private var cancellables = Set<AnyCancellable>()
@@ -47,8 +49,10 @@ public final class SearchUserViewController: UIViewController {
         viewModel
             .$users
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
+            .sink { [weak self] users in
                 self?.tableView.reloadData()
+                self?.searchUserEmptyListView.isHidden = !users.isEmpty
+                self?.tableView.isHidden = users.isEmpty
             }
             .store(in: &cancellables)
         
@@ -91,6 +95,12 @@ public final class SearchUserViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom)
             make.left.right.bottom.equalToSuperview()
+        }
+        
+        view.addSubview(searchUserEmptyListView)
+        searchUserEmptyListView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.right.equalToSuperview().inset(40)
         }
         
         view.addSubview(loadingView)
