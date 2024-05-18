@@ -51,8 +51,15 @@ public final class SearchUserViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] users in
                 self?.tableView.reloadData()
-                self?.searchUserEmptyListView.isHidden = !users.isEmpty
-                self?.tableView.isHidden = users.isEmpty
+            }
+            .store(in: &cancellables)
+        
+        viewModel
+            .$showEmptyUserListView
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] show in
+                self?.searchUserEmptyListView.isHidden = !show
             }
             .store(in: &cancellables)
         

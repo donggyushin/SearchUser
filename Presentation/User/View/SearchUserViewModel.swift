@@ -14,6 +14,7 @@ final class SearchUserViewModel {
     @Published private(set) var users: [User] = []
     @Published private(set) var loading: Bool = false
     @Published private(set) var errorMessage: String? = nil
+    @Published private(set) var showEmptyUserListView: Bool = false
     @Published private var metadata: SearchUsersMetadata = .init(query: "")
     
     private let searchUserUsecase: SearchUserUsecase
@@ -27,12 +28,13 @@ final class SearchUserViewModel {
         guard searchTask == nil else { return }
         searchTask = Task {
             do {
+                showEmptyUserListView = false
                 errorMessage = nil
                 loading = true
                 metadata = .init(query: query)
                 let (users, totalCount) = try await searchUserUsecase.implement(query: query, page: metadata.page)
                 self.users = users.map({ .init(domain: $0) })
-                
+                self.showEmptyUserListView = users.isEmpty
                 metadata.page += 1
                 metadata.canGetMoreUsers = self.users.count < totalCount
             } catch {

@@ -14,7 +14,7 @@ final class SearchUserEmptyListView: UIView {
             label.text =
             """
             No users have been searched.
-            Use the textfield above, search for the users you want.
+            Search for the users with different words
             """
             label.numberOfLines = 0
             label.textAlignment = .center
