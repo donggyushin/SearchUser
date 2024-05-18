@@ -261,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				700D53EC2BF7A87100CA77B3 /* Repository */,
+				7069CE122BF8FB3C004AAF26 /* Usecase */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -336,7 +337,6 @@
 		700FF7462BF872E90014890A /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				700FF76B2BF8A5100014890A /* LogoutUsecase.swift */,
 				700FF7472BF872F70014890A /* SearchUserUsecase.swift */,
 			);
 			path = Usecase;
@@ -392,6 +392,14 @@
 				700FF75A2BF8790F0014890A /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7069CE122BF8FB3C004AAF26 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				700FF76B2BF8A5100014890A /* LogoutUsecase.swift */,
+			);
+			path = Usecase;
 			sourceTree = "<group>";
 		};
 		70B718202BF791CA0095B9AD = {
