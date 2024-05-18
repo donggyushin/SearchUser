@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .sink { token in
                 if token == nil {
                     if self.window?.rootViewController is Presentation.AuthViewController == false {
-                        self.window?.rootViewController = Presentation.AuthViewController()
+                        self.window?.rootViewController = Presentation.AuthViewController(authRepository: AuthRepositoryImpl.shared)
                     }
                 } else {
                     if self.window?.rootViewController is Presentation.SearchUserViewController == false {
